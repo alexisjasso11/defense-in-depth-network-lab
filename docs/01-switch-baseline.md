@@ -46,7 +46,7 @@ line vty 0 15
 
 Tested by logging out and back in **before** saving, so a mistake couldn't cause a lockout.
 
-![Console Login Prompt](../images/01-console-login.png)
+![Console Login Prompt](../images/1-LOGIN-WORKING.png)
 
 ### Step 3 — Enable SSH
 ```
