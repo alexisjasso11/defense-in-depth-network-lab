@@ -85,7 +85,8 @@ interface GigabitEthernet1/0/3
 | Block private networks (WAN) | Temporarily off | WAN is on a private subnet; re-enable after bridge mode |
 | Block bogons | On | Drops unassigned/reserved addresses |
 
-![OPNsense Dashboard](../images/04-opnsense-dashboard.png)
+![OPNsense Dashboard](../images/6-DASHUP.png)
+*OPNsense dashboard after the setup wizard and firmware update.*
 
 ### Step 7 — Patch and Back Up
 - Updated to the latest firmware **before** any further configuration
