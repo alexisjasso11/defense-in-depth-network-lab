@@ -70,6 +70,7 @@ interface GigabitEthernet1/0/3
  spanning-tree portfast
 ```
 ![Gi1/0/3 configured for OPNsense WAN](../images/4-%20TEMP-OPNSENSE%20CONF.png)
+
 *Gi1/0/3 set as an access port in VLAN 100 with PortFast for the temporary OPNsense WAN link.*
 ### Step 6 — Setup Wizard
 
