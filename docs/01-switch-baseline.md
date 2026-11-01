@@ -101,7 +101,7 @@ interface GigabitEthernet1/0/1
 ### Step 6 — Verify Remote Management
 SSH from the laptop to `192.168.1.245` via MobaXterm succeeded.
 
-![SSH Session](../images/03-ssh-mobaxterm.png)
+![SSH Session](../images/3-SSH-IN.png)
 
 ## 🛠️ Troubleshooting & Challenges
 
