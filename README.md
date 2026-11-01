@@ -63,7 +63,7 @@ LAB-SW1 (Cisco Catalyst)
 - **Tailscale** — WireGuard-based remote access
 - **Nmap** — segmentation and vulnerability validation
 - **MobaXterm** — serial console and SSH client
-- **Rufus / 7-Zip** — installer media preparation
+- **Rufus** — installer media preparation
 
 ## 🎯 Skills Demonstrated
 - 🔐 Network device hardening (Cisco IOS-XE, OPNsense)
