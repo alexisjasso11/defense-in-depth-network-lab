@@ -65,7 +65,7 @@ no ip http server
 | `ip ssh authentication-retries 3` | Limits password guessing per connection |
 | `no ip http server` | Disables the unencrypted web UI (HTTPS remains) |
 
-![show ip ssh](../images/2-SETTING SSH.png)
+![show ip ssh](../images/2-SETTING_SSH.png)
 
 ### Step 4 — Build the Management VLAN
 ```
