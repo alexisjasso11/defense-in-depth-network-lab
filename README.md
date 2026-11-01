@@ -79,7 +79,7 @@ LAB-SW1 (Cisco Catalyst)
 The Catalyst can route, but its ACLs are stateless and it can't do NAT, per-VLAN DHCP with DNS filtering, IDS/IPS, or VPN. Routing through OPNsense means every packet crossing a VLAN boundary is inspected by a stateful firewall.
 
 **Why this firewall hardware?**
-I defined requirements first (x86, 4+ Intel i226-V NICs, CPU headroom for inline IPS at ~500 Mbps, low 24/7 power) and evaluated about ten options. The 8-core i3-N305 with 16 GB onboard won on both performance and total cost once 2026 RAM prices were factored in.
+I defined requirements first (x86, 4+ Intel i226-V NICs, CPU headroom for inline IPS at ~500 Mbps, low 24/7 power) and evaluated about ten options. The 8-core i3-N305 with 16 GB onboard won on both performance and total cost once RAM prices were factored in.
 
 **Why no open ports for remote access?**
 Tailscale acts as a subnet router advertising only the management subnet, so nothing is exposed on the WAN.
