@@ -88,4 +88,3 @@ Tailscale acts as a subnet router advertising only the management subnet, so not
 - No password hashes, secrets, or firewall config backups are committed
 - Only private (RFC 1918) addresses appear in documentation
 - Screenshots are reviewed for typed passwords and serial numbers before upload
-- All scanning is performed only on networks I own
