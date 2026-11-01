@@ -61,6 +61,9 @@ certutil -hashfile OPNsense-26.7-vga-amd64.img.bz2 SHA256
 
 The default LAN address (192.168.1.1) overlapped the home network on the WAN side, which would break routing, so LAN was moved to `10.10.10.0/24`.
 
+![Laptop received DHCP lease from OPNsense](../images/5-CON%20LAN%20IP%20DHCP%20WORKS.png)
+
+*Laptop on igc1 received a 10.10.10.x address, confirming OPNsense's LAN DHCP server is working.*
 ### Step 5 — Temporary WAN Path Through the Switch
 ```
 interface GigabitEthernet1/0/3
