@@ -31,8 +31,6 @@ Using `root` for daily administration means every log entry says "root," with no
 
 Privileges were assigned through **group membership** rather than directly to the user, the same role-based approach used with Active Directory security groups.
 
-![Named Admin Dashboard](../images/09-named-admin-login.png)
-
 ### Step 2 — Configure TOTP Two-Factor Authentication
 
 | Step | Location | Action |
@@ -44,7 +42,7 @@ Privileges were assigned through **group membership** rather than directly to th
 
 Testing before enforcing ensured a misconfiguration couldn't lock me out of the GUI.
 
-![TOTP Tester Success](../images/08-totp-tester-success.png)
+![TOTP Tester Success](../images/7-WORKING-TOTP.png)
 *TOTP verified with the built-in tester before being enforced.*
 
 > 🔒 The QR code and OTP seed were intentionally not captured. They are the secret itself.
@@ -58,7 +56,8 @@ Testing before enforcing ensured a misconfiguration couldn't lock me out of the 
 | DNS Rebind Check | Enabled | Enabled | Blocks DNS rebinding attacks against the GUI |
 | Anti-lockout Rule | Enabled | Enabled | Guarantees LAN access while the network is being built |
 
-![GUI Access Settings](../images/10-gui-access-settings.png)
+![GUI Access Settings](../images/8-RESTRICT-GUI.png)
+*Web GUI restricted to the LAN interface with a 30-minute session timeout.*
 
 ### Step 4 — Keep SSH Disabled
 The GUI (with MFA) and the physical console cover all administration needs, so SSH stays off. If it's ever needed, it will be enabled **key-only, with root login disabled, on the management network only**.
