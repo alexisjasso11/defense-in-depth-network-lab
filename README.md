@@ -16,7 +16,7 @@ Designing and building a segmented home network the way a small enterprise would
 |---|---|---|---|
 | 1 | Switch baseline: access hardening, SSH, management VLAN | ✅ Complete | [View](docs/01-switch-baseline.md) |
 | 2 | OPNsense install, initial config, patching | ✅ Complete | [View](docs/02-opnsense-install.md) |
-| 3 | Firewall hardening: 2FA, management-only GUI | ⏳ Next | — |
+| 3 | Firewall hardening: named admin, TOTP MFA, GUI restricted to LAN | ✅ Complete | [View](docs/03-opnsense-hardening.md) |
 | 4 | VLAN segmentation + 802.1Q trunk | ⏳ Planned | — |
 | 5 | Per-VLAN firewall rules | ⏳ Planned | — |
 | 6 | Layer 2 security: DHCP snooping, DAI, port security | ⏳ Planned | — |
