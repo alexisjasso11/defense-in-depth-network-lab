@@ -60,7 +60,7 @@ Addresses `.2`–`.99` in each VLAN are reserved for static devices (e.g., the s
 #### Step 2 — Assign and Address the Interfaces
 Each VLAN was assigned as an interface, enabled, and given a static gateway address from the IP plan.
 
-![VLAN Interface Assignments](9-VLAN-INT.png)
+![VLAN Interface Assignments](../images/9-VLAN-INT.png)
 
 #### Step 3 — DHCP per VLAN
 
