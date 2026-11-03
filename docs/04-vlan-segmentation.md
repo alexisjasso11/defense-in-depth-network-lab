@@ -82,7 +82,7 @@ New interfaces block all traffic by default. One temporary pass rule per VLAN wa
 | State | keep state | Stateful: replies allowed automatically |
 | Description | `TEMP allow all - <VLAN> - Phase 4 testing` | Easy to find and delete in Phase 5 |
 
-![Temporary VLAN Rules](../images/10-TEMP-RULES.png)
+![Temporary VLAN Rules](../images/10-DHCP-SUBNET.png)
 
 ### Section B — Switch Trunk + Management Move ⏳ Next
 - Create VLANs 10, 20, 30, 40, 999 on LAB-SW1
