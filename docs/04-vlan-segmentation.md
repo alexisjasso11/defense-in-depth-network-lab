@@ -68,8 +68,6 @@ Each VLAN was assigned as an interface, enabled, and given a static gateway addr
 | Decision | Reason |
 |---|---|
 | Used **Dnsmasq** | Already serving LAN; also registers DHCP hostnames in DNS |
-| Left **Kea** disabled | Two DHCP servers on one segment would hand out conflicting leases |
-| Dnsmasq **Tag** field blank | It labels DHCP options, not 802.1Q VLANs |
 
 ![DHCP Ranges per VLAN](../images/10-DHCP-SUBNET.png)
 *Dnsmasq DHCP scope for each VLAN, .100–.200, leaving .2–.99 for static devices.*
