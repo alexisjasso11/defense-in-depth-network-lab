@@ -60,7 +60,8 @@ Addresses `.2`–`.99` in each VLAN are reserved for static devices (e.g., the s
 #### Step 2 — Assign and Address the Interfaces
 Each VLAN was assigned as an interface, enabled, and given a static gateway address from the IP plan.
 
-![VLAN Interface Assignments](../images/9-VLAN-INT.png)
+![VLAN Interface Assignments](../images/9-VLAN-ASSIGNMENTS.png)
+*All five VLANs on igc2 with gateway addresses from the IP plan; the LAN admin port stays separate at 10.10.10.1.*
 
 #### Step 3 — DHCP per VLAN
 
@@ -69,6 +70,9 @@ Each VLAN was assigned as an interface, enabled, and given a static gateway addr
 | Used **Dnsmasq** | Already serving LAN; also registers DHCP hostnames in DNS |
 | Left **Kea** disabled | Two DHCP servers on one segment would hand out conflicting leases |
 | Dnsmasq **Tag** field blank | It labels DHCP options, not 802.1Q VLANs |
+
+![DHCP Ranges per VLAN](../images/10-DHCP-RANGES.png)
+*Dnsmasq DHCP scope for each VLAN, .100–.200, leaving .2–.99 for static devices.*
 
 #### Step 4 — Temporary Test Rules
 New interfaces block all traffic by default. One temporary pass rule per VLAN was added to prove the plumbing works before real policy is written in Phase 5.
@@ -82,7 +86,8 @@ New interfaces block all traffic by default. One temporary pass rule per VLAN wa
 | State | keep state | Stateful: replies allowed automatically |
 | Description | `TEMP allow all - <VLAN> - Phase 4 testing` | Easy to find and delete in Phase 5 |
 
-![Temporary VLAN Rules](../images/10-DHCP-SUBNET.png)
+![Temporary VLAN Rules](../images/11-VLAN-RULES.png)
+*Temporary per-VLAN pass rules, each scoped to its own subnet and labeled for removal in Phase 5.*
 
 ### Section B — Switch Trunk + Management Move ⏳ Next
 - Create VLANs 10, 20, 30, 40, 999 on LAB-SW1
