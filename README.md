@@ -17,7 +17,7 @@ Designing and building a segmented home network the way a small enterprise would
 | 1 | Switch baseline: access hardening, SSH, management VLAN | ✅ Complete | [View](docs/01-switch-baseline.md) |
 | 2 | OPNsense install, initial config, patching | ✅ Complete | [View](docs/02-opnsense-install.md) |
 | 3 | Firewall hardening: named admin, TOTP MFA, GUI restricted to LAN | ✅ Complete | [View](docs/03-opnsense-hardening.md) |
-| 4 | VLAN segmentation + 802.1Q trunk | ⏳ Planned | — |
+| 4 | VLAN segmentation + 802.1Q trunk | 🔄 In Progress | [View](docs/04-vlan-segmentation.md) |
 | 5 | Per-VLAN firewall rules | ⏳ Planned | — |
 | 6 | Layer 2 security: DHCP snooping, DAI, port security | ⏳ Planned | — |
 | 7 | Tailscale subnet router with ACLs | ⏳ Planned | — |
@@ -31,7 +31,7 @@ Designing and building a segmented home network the way a small enterprise would
 ```
 Internet
    │
-ISP modem (bridge mode)
+Spectrum cable modem (modem only — no bridge mode needed)
    │
 OPNsense firewall ── routing, stateful firewall, NAT, DHCP, DNS, IDS/IPS, Tailscale
    │  802.1Q trunk
@@ -40,13 +40,13 @@ LAB-SW1 (Cisco Catalyst)
    └── Trunk → VLAN-aware access point (SSIDs mapped to VLANs)
 ```
 
-| VLAN | Name | Purpose | Policy |
-|---|---|---|---|
-| 100 | MGMT | Switch, firewall, AP management | Admin devices only |
-| 10 | HOME | Trusted clients | Internet + limited Lab access |
-| 20 | GUEST | Visitor Wi-Fi | Internet only |
-| 30 | IOT | Smart devices | Internet only, no inbound initiation |
-| 40 | LAB | Proxmox / Active Directory lab | Isolated by default |
+| VLAN | Name | Subnet | Purpose | Policy |
+|---|---|---|---|---|
+| 100 | MGMT | 10.0.100.0/24 | Switch, firewall, AP management | Admin devices only |
+| 10 | HOME | 10.0.10.0/24 | Trusted clients | Internet + limited Lab access |
+| 20 | GUEST | 10.0.20.0/24 | Visitor Wi-Fi | Internet only |
+| 30 | IOT | 10.0.30.0/24 | Smart devices | Internet only, no inbound initiation |
+| 40 | LAB | 10.0.40.0/24 | Proxmox / Active Directory lab | Isolated by default |
 
 ## Hardware Used
 
@@ -67,6 +67,7 @@ LAB-SW1 (Cisco Catalyst)
 
 ## 🎯 Skills Demonstrated
 - 🔐 Network device hardening (Cisco IOS-XE, OPNsense)
+- 🔑 Multi-factor authentication and least-privilege administration
 - 🧱 Network segmentation and VLAN design
 - 🔥 Stateful firewall policy design
 - 🕵️ IDS/IPS deployment and performance tuning
