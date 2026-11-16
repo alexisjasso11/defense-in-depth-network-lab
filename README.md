@@ -17,8 +17,8 @@ Designing and building a segmented home network the way a small enterprise would
 | 1 | Switch baseline: access hardening, SSH, management VLAN | ✅ Complete | [View](docs/01-switch-baseline.md) |
 | 2 | OPNsense install, initial config, patching | ✅ Complete | [View](docs/02-opnsense-install.md) |
 | 3 | Firewall hardening: named admin, TOTP MFA, GUI restricted to LAN | ✅ Complete | [View](docs/03-opnsense-hardening.md) |
-| 4 | VLAN segmentation + 802.1Q trunk | 🔄 In Progress | [View](docs/04-vlan-segmentation.md) |
-| 5 | Per-VLAN firewall rules | ⏳ Planned | — |
+| 4 | VLAN segmentation + 802.1Q trunk + Nmap baseline | ✅ Complete | [View](docs/04-vlan-segmentation.md) |
+| 5 | Per-VLAN firewall rules | ⏳ Next | — |
 | 6 | Layer 2 security: DHCP snooping, DAI, port security | ⏳ Planned | — |
 | 7 | Tailscale subnet router with ACLs | ⏳ Planned | — |
 | 8 | Suricata IDS → IPS with performance testing | ⏳ Planned | — |
@@ -68,7 +68,7 @@ LAB-SW1 (Cisco Catalyst)
 ## 🎯 Skills Demonstrated
 - 🔐 Network device hardening (Cisco IOS-XE, OPNsense)
 - 🔑 Multi-factor authentication and least-privilege administration
-- 🧱 Network segmentation and VLAN design
+- 🧱 Network segmentation, VLAN design, and 802.1Q trunking
 - 🔥 Stateful firewall policy design
 - 🕵️ IDS/IPS deployment and performance tuning
 - 🧪 Security control validation and findings documentation
@@ -78,6 +78,9 @@ LAB-SW1 (Cisco Catalyst)
 ## 🧠 Key Design Decisions
 **Why route VLANs through the firewall instead of the switch?**
 The Catalyst can route, but its ACLs are stateless and it can't do NAT, per-VLAN DHCP with DNS filtering, IDS/IPS, or VPN. Routing through OPNsense means every packet crossing a VLAN boundary is inspected by a stateful firewall.
+
+**Why does the internet connection never touch the switch?**
+The ISP side connects directly to the firewall's WAN port instead of passing through a VLAN on the switch. A switch misconfiguration can't expose the internet-facing segment, and the path stays simple: internet → firewall → switch.
 
 **Why this firewall hardware?**
 I defined requirements first (x86, 4+ Intel i226-V NICs, CPU headroom for inline IPS at ~500 Mbps, low 24/7 power) and evaluated about ten options. The 8-core i3-N305 with 16 GB onboard won on both performance and total cost once RAM prices were factored in.
