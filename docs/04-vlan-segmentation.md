@@ -154,6 +154,8 @@ The switch moved from the old home network (192.168.1.245) into the MGMT VLAN. B
 | MGMT | LAB-SW1 | ✅ Switch reached its gateway 10.0.100.1 across the trunk |
 | IOT / LAB | — | Configured identically; to be verified when devices are added |
 
+![GUEST VLAN Lease](../images/12-GUEST-IP.png)
+*Ubuntu laptop on the GUEST test port receiving a 10.0.20.x address from OPNsense.*
 
 ### Section D — Nmap "Before" Baseline 🔍
 With the temporary allow-all rules still in place, I scanned from the **GUEST** network to record what a visitor can reach. These results are the "before" picture that Phase 5's rules will be measured against.
